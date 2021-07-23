@@ -1,0 +1,107 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2em;
+}
+
+.nav > span,.nav > div {
+  padding: 20px 10px 10px 10px;
+}
+
+.options {
+  display: flex;
+}
+
+.options > div {
+  padding: 0 10px 0 10px;
+}
+
+.options > div:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+
+.dropdown {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  position: absolute;
+  margin-top: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(196, 196, 196, 0.7);
+  visibility: hidden;
+}
+
+.dropdown > div {
+  padding: 15px 50px 15px 50px;
+  background-color: whitesmoke;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+
+.dropdown > div:hover {
+  background-color: rgb(209, 209, 209);
+}
+
+.intro {
+  background-color: whitesmoke;
+  padding: 30vh 0 30vh 20vw;
+  display: block;
+  align-content: center;
+}
+
+.segment {
+  background-color: white;
+  padding: 5vh 10vw 5vh 10vw;
+}
+
+.project_cards {
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-around;
+}
+
+
+.project_cards > div {
+  margin: 2vw;
+  border-radius: 10px;
+}
+
+.project_cards > div > img { 
+  width: 100%;
+}
+
+.project_cards > div > div { 
+  padding: 15px;
+  cursor: pointer;
+}
+
+.project_cards > div > div:hover > div > span {
+  transform: rotate(-45deg);
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+#showcase {
+  visibility: hidden;
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+  left: 5vw;
+  bottom: 5vh;
+  background-color: whitesmoke;
+  transition: 0.5s;
+  opacity: 0;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 5px rgba(196, 196, 196, 0.7); 
+}
