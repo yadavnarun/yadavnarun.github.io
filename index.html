@@ -7,6 +7,14 @@
 
 	<link rel="stylesheet" href="./src/css/loader.css" />
 	<link rel="stylesheet" href="./src/css/main.css" />
+
+	<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <style>
+      * {
+        font-family: "Source Sans Pro"
+        /* font-size: 48px; */
+			}</style>
 </head>
 
 <body>
@@ -15,39 +23,129 @@
 	</div>
 
 	<div class="nav">
-		<div>Welcome</div>
+		<div class="color"></div>
 		<div class="options">
-			<div>Work</div>
+			<div>Home</div>
 			<div>About</div>
-			<div onclick="dropdown()">Connect
-				<div class="dropdown">
-					<div>Linkedin</div>
-					<div>Linkedin</div>
-					<div>Linkedin</div>
-				</div>
+			<div>Portfolio</div>
+			<div>Experience</div>
+		</div>
+	</div>
+
+	<div class="social">
+		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/twitter--v1.png" /></a></div>
+		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/linkedin.png" /></a></div>
+		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/github--v1.png" /></a></div>
+		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" /></a></div>
+	</div>
+
+	<div class="divider navChange" id="hero">
+		<div class="intro">
+			<div class="">
+				<div class="color" style="font-size: 3em;">Hello I'm</div>
+				<div style="font-size: 5em; font-weight: 800;">Narun Yadav</div>
+				<div style="font-size: 2em;">Aspiring Web Developer</div>
+				<hr style="width: 25%;"/>
+				<br />
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+				<br /><br />
+				<a href="#contact" class="button">Resume</a><a href="#contact" class="button">Contact</a>
+			</div>
+		</div>
+
+		<div class="intro">
+			<div class="box">
+				<img src="./src/images/left/Illustrationdev.svg" alt="Illustration" style="position:relative; top:25vh; left:1vw;"/>
 			</div>
 		</div>
 	</div>
 
-	<div class="intro">
-		<div style="font-size: 2em;">Narun Yadav</div>
-		<div style="font-size: 6em;">
-			Developer, <br />
-			<span style="margin-left: 5vw;">Something else</span>
+	<div class="segment navChange" id="about">
+
+		<div style="font-size: 3em;">
+			About<br />
+			<span style="margin-left: 3vw;">& interests</span>
 		</div>
+
+		
+		<div class="skillContainer">
+			<div class="skill">
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" height="50em"/>
+				<div>Web Development</div>
+				<div>
+					<div>react</div>
+					<div>NOde</div>
+					<div>react</div>
+					<div>NOde</div>
+					<div>react</div>
+					<div>NOde</div>
+				</div>
+			</div>
+			<div class="skill">
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" height="50em"/>
+				<div>Web Development</div>
+				<div>
+					<div>react</div>
+					<div>NOde</div>
+					<div>react</div>
+					<div>NOde</div>
+					<div>react</div>
+					<div>NOde</div>
+				</div>
+			</div>
+			<div class="skill">
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" height="50em"/>
+				<div>Web Development</div>
+				<div>
+					<div>react</div>
+					<div>NOde</div>
+					<div>react</div>
+					<div>NOde</div>
+					<div>react</div>
+					<div>NOde</div>
+				</div>
+			</div>
+			<div class="skill">
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" height="50em"/>
+				<div>Web Development</div>
+				<div>
+					<div>react</div>
+					<div>NOde</div>
+					<div>react</div>
+					<div>NOde</div>
+					<div>react</div>
+					<div>NOde</div>
+				</div>
+			</div>
+			<div class="skill">
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" height="50em"/>
+				<div>Web Development</div>
+				<div>
+					<div>react</div>
+					<div>NOde</div>
+					<div>react</div>
+					<div>NOde</div>
+					<div>react</div>
+					<div>NOde</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
-	<div class="segment">
+
+	<div class="segment navChange" id="services" style="background-color: white;">
 		<div style="font-size: 3em;">
 			Selected <br />
-			<span style="margin-left: 3vw;">Projects</span>
+			<span style="margin-left: 1.5em;">Projects</span>
 		</div>
 
 		<div class="project_cards">
 			<div>
 				<img src="./src/images/Screenshot_20210722_082613.png">
 				<div onClick="showProject()">
-					<div style="font-size: 2em; justify-content: space-between; display: flex;">Test Project <span>&#8594;</span></div> 
+					<div style="font-size: 2em; justify-content: space-between; display: flex;">Test Project <span>&#8594;</span>
+					</div>
 					<div>Website & Design</div>
 				</div>
 				<div id="showcase">
@@ -57,66 +155,40 @@
 					</div>
 					<br />
 					<img src="./src/images/Screenshot_20210722_082613.png">
-					<br/>
+					<br />
 				</div>
 			</div>
 			<div>
 				<img src="./src/images/Screenshot_20210722_095924.png">
 				<div>
-					<div style="font-size: 2em; justify-content: space-between; display: flex;">Test Project 2 <span>&#8594;</span></div> 
+					<div style="font-size: 2em; justify-content: space-between; display: flex;">Test Project 2
+						<span>&#8594;</span></div>
 					<div>Design</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="segment" style="background-color: whitesmoke;">
-		<div style="font-size: 3em;">
-			About<br />
-			<span style="margin-left: 3vw;">& Skills</span>
-		</div>
 
-		<div style="display: flex; justify-content: space-between; margin: 3em 8em 3em 8em;">
-			<img src="./src/images/Screenshot_20210722_095924.png" />
-			<div style="margin-left: 15em;">
-				<h1>I am this and that developer based in India. I am a this and all and like interfaces and products or many any.</h1>
-				<div>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consequat turpis eu felis posuere bibendum. Aenean vitae egestas lorem. Donec laoreet nibh consequat tortor mattis condimentum. Nulla a justo ipsum. Integer efficitur sollicitudin justo, sit amet placerat erat lacinia nec. Morbi consectetur velit at elit hendrerit, non tempor turpis tincidunt. Proin ornare consectetur scelerisque. Mauris a faucibus justo, nec lobortis leo. Curabitur nec luctus neque. Nullam cursus blandit euismod.
-				</div>
 
-				<br />
 
-				<div>
-					<div>Toolsx</div>
-					<div>VS Code</div>
-					<div>VS Code</div>
-					<div>VS Code</div>
-					<div>VS Code</div>
-					<div>VS Code</div>
-					<div>VS Code</div>
-				</div>
-			</div>
-		</div>
 
-	</div>
 
-	<div class="segment" style="display: flex; justify-content: space-between;">
+
+
+
+
+	<div class="segment" id="portfolio" style="display: flex; justify-content: space-between;">
 		<div style="font-size: 3em;">
 			Let's work <br />
 			<span style="margin-left: 3vw;">Together</span>
 		</div>
 
-		<div style="border-radius: 100%; background-color: rgb(0, 0, 0); padding: 1em; width: 8em; height: 8em; text-align: center; cursor: pointer;">
+		<div
+			style="border-radius: 100%; background-color: rgb(0, 0, 0); padding: 1em; width: 8em; height: 8em; text-align: center; cursor: pointer;">
 			<div style="margin-top:1.5em; font-size: 1.5em; color: white;">Write an Email</div>
 		</div>
 	</div>
-
-
-
-
-
-
-
 
 
 	<script>
@@ -125,24 +197,55 @@
 				document.querySelector("body").style.visibility = "hidden";
 				document.querySelector("#loader_back").style.visibility = "visible";
 			} else {
-				await new Promise(r => setTimeout(r, 1000));
+				// await new Promise(r => setTimeout(r, 500));
 				document.querySelector("#loader_back").style.display = "none";
 				document.querySelector("body").style.visibility = "visible";
 			}
 		};
 
-		function dropdown() {
-			const state = document.querySelector(".dropdown").style.visibility;
-			if(state == "visible") {
-				document.querySelector(".dropdown").style.visibility = "hidden";
-			} else {
-				document.querySelector(".dropdown").style.visibility = "visible";
-			}
-		}
+		// function dropdown() {
+		// 	const state = document.querySelector(".dropdown").style.visibility;
+		// 	if (state == "visible") {
+		// 		document.querySelector(".dropdown").style.visibility = "hidden";
+		// 	} else {
+		// 		document.querySelector(".dropdown").style.visibility = "visible";
+		// 	}
+		// }
+
 		
+		const sections = document.querySelectorAll(".navChange")
+		const nav = document.querySelector(".nav")
+
+		const options = {
+			threshold: "0.5"
+		}
+
+		const observer = new IntersectionObserver(entries => {
+			entries.forEach(e => {
+				const now = e.isIntersecting
+				if(now){
+					switch(e.target.id){
+						case "hero": nav.classList.remove("navBack")
+						break;
+					 	case "about" : nav.classList.add("navBack")
+						break;
+			 		}
+				}
+			})
+		}, options)
+
+		sections.forEach(section => {
+			observer.observe(section)
+		})
+
+		
+
+
+
+
 		function showProject() {
 			const state = document.querySelector("#showcase").style.visibility;
-			if(state == "visible") {
+			if (state == "visible") {
 				document.querySelector("#showcase").style.visibility = "hidden";
 				document.querySelector("#showcase").style.opacity = "0";
 			} else {
