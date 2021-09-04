@@ -5,4 +5,4 @@ Made with:
     CSS
     JavaScript
 
-[Github Pages Link]: https://yadavnarun.github.io/
+[Github Pages Link](https://yadavnarun.github.io/)
