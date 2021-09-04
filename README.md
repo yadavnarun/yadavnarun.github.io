@@ -1,3 +1,8 @@
-# mywebsite
+# Website
 
-link: yadavnarun.github.io/mywebsite/
+Made with:
+    HTML
+    CSS
+    JavaScript
+
+link: yadavnarun.github.io/
