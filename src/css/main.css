@@ -1,6 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  font-family: "Source Sans Pro"
 }
 
 body {
@@ -18,6 +19,7 @@ body {
   display: flex;
   justify-content: space-around;
   font-size: 1.2em;
+  transition: 300ms ease;
 }
 
 .navBack{
@@ -135,7 +137,6 @@ body {
 .skill{
   padding: 2em;
   margin: 2em;
-  min-width: 20vw;
   background-color: white;
   box-shadow: 0px 0px 10px rgb(211, 211, 211);
   border-radius: 0.3em;
@@ -160,8 +161,58 @@ body {
 }
 
 
+@media only screen and (max-width:1350px) and (min-width:500px) {
+  .nav{
+    background-color: white;
+  }
+  .options{
+    color: black;
+  }
+  .options > div:after {
+    background-color: black;
+  }
+  .divider{
+    grid-template-columns: 1fr 0fr;
+  }
+  .box{
+    display: none;
+  }
+  .skillContainer{
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 
+@media only screen and (max-width:500px) {
+  .nav{
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(161, 161, 161);
+  }
+  .social{
+    position: fixed;
+    right: 0;
+    left: 85vw;
+  }
+  .intro{
+    padding: 15px;
+    font-size: 12px;
+  }
+  .options{
+    color: black;
+  }
+  .options > div:after {
+    background-color: black;
+  }
+  .divider{
+    grid-template-columns: 1fr 0fr;
+  }
+  .box{
+    display: none;
+  }
+  .skillContainer{
+    grid-template-columns: 1fr;
+  }
+}
 
 
 

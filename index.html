@@ -3,24 +3,34 @@
 
 <head>
 	<meta charset="UTF-8">
+  <meta name="description" content="narun yadav personal website, portfolio, contact">
+  <meta name="keywords" content="narun, narun yadav, portfolio, projects, website, contact">
+  <meta name="author" content="Narun Yadav">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 	<title>Narun</title>
+
+	<!-- stylesheets -->
 
 	<link rel="stylesheet" href="./src/css/loader.css" />
 	<link rel="stylesheet" href="./src/css/main.css" />
 
-	<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
-    <style>
-      * {
-        font-family: "Source Sans Pro"
-        /* font-size: 48px; */
-			}</style>
+	<!-- googlefonts -->
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+
 </head>
 
 <body>
+
+	<!-- loader -->
+
 	<div id="loader_back">
 		<div id="loader" class="center"></div>
 	</div>
+
+	<!-- navigation -->
 
 	<div class="nav">
 		<div class="color"></div>
@@ -32,12 +42,16 @@
 		</div>
 	</div>
 
+	<!-- social side banner -->
+
 	<div class="social">
-		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/twitter--v1.png" /></a></div>
-		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/linkedin.png" /></a></div>
-		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/github--v1.png" /></a></div>
-		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" /></a></div>
+		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="twitter" /></a></div>
+		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="linkedin" /></a></div>
+		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/github--v1.png" alt="github" /></a></div>
+		<div><a href="#"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="youtube" /></a></div>
 	</div>
+
+	<!-- hero section -->
 
 	<div class="divider navChange" id="hero">
 		<div class="intro">
@@ -60,6 +74,8 @@
 		</div>
 	</div>
 
+	<!-- about section -->
+
 	<div class="segment navChange" id="about">
 
 		<div style="font-size: 3em;">
@@ -70,7 +86,7 @@
 		
 		<div class="skillContainer">
 			<div class="skill">
-				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" height="50em"/>
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" alt="web" height="50em"/>
 				<div>Web Development</div>
 				<div>
 					<div>react</div>
@@ -82,7 +98,7 @@
 				</div>
 			</div>
 			<div class="skill">
-				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" height="50em"/>
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" alt="web" height="50em"/>
 				<div>Web Development</div>
 				<div>
 					<div>react</div>
@@ -94,7 +110,7 @@
 				</div>
 			</div>
 			<div class="skill">
-				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" height="50em"/>
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" alt="web" height="50em"/>
 				<div>Web Development</div>
 				<div>
 					<div>react</div>
@@ -106,7 +122,7 @@
 				</div>
 			</div>
 			<div class="skill">
-				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" height="50em"/>
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" alt="web" height="50em"/>
 				<div>Web Development</div>
 				<div>
 					<div>react</div>
@@ -118,7 +134,7 @@
 				</div>
 			</div>
 			<div class="skill">
-				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" height="50em"/>
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/web.png" alt="web" height="50em"/>
 				<div>Web Development</div>
 				<div>
 					<div>react</div>
@@ -133,8 +149,9 @@
 
 	</div>
 
+	<!-- portfolio section -->
 
-	<div class="segment navChange" id="services" style="background-color: white;">
+	<div class="segment navChange" id="portfolio" style="background-color: white;">
 		<div style="font-size: 3em;">
 			Selected <br />
 			<span style="margin-left: 1.5em;">Projects</span>
@@ -142,7 +159,7 @@
 
 		<div class="project_cards">
 			<div>
-				<img src="./src/images/Screenshot_20210722_082613.png">
+				<img src="./src/images/Screenshot_20210722_082613.png" alt="project" />
 				<div onClick="showProject()">
 					<div style="font-size: 2em; justify-content: space-between; display: flex;">Test Project <span>&#8594;</span>
 					</div>
@@ -154,12 +171,12 @@
 						<div onclick="showProject()">&#8594;</div>
 					</div>
 					<br />
-					<img src="./src/images/Screenshot_20210722_082613.png">
+					<img src="./src/images/Screenshot_20210722_082613.png" alt="project" />
 					<br />
 				</div>
 			</div>
 			<div>
-				<img src="./src/images/Screenshot_20210722_095924.png">
+				<img src="./src/images/Screenshot_20210722_095924.png" alt="project" />
 				<div>
 					<div style="font-size: 2em; justify-content: space-between; display: flex;">Test Project 2
 						<span>&#8594;</span></div>
@@ -169,16 +186,12 @@
 		</div>
 	</div>
 
+	<!-- experience section -->
 
 
+	<!-- footer -->
 
-
-
-
-
-
-
-	<div class="segment" id="portfolio" style="display: flex; justify-content: space-between;">
+	<div class="segment" id="footer" style="display: flex; justify-content: space-between;">
 		<div style="font-size: 3em;">
 			Let's work <br />
 			<span style="margin-left: 3vw;">Together</span>
