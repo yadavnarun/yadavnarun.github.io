@@ -1,8 +1,3 @@
-# Website
+# Portfolio Website
 
-Made with:
-    HTML
-    CSS
-    JavaScript
-
-[Github Pages Link](https://yadavnarun.github.io/)
+[Page Link](https://yadavnarun.github.io/)
