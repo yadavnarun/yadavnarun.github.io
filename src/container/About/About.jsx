@@ -13,7 +13,7 @@ const About = () => {
     },
     {
       imgUrl: 'about04',
-      title: 'Frontend Developer',
+      title: 'Backend Developer',
       description:
         'Backend developer with a passion of building functional web applications with dynamic data.',
     },

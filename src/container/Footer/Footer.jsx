@@ -1,6 +1,8 @@
-import { images } from '../../constants';
-import { AppWrap, MotionWrap } from '../../wrapper';
-import './Footer.scss';
+import { images } from "../../constants";
+import { AppWrap, MotionWrap } from "../../wrapper";
+import { BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs";
+import { SiLeetcode } from "react-icons/si";
+import "./Footer.scss";
 
 const Footer = () => {
   return (
@@ -11,7 +13,7 @@ const Footer = () => {
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
           <a href="mailto:n.y.narun@gmail.com" className="p-text">
-            n.y.@gmail.com
+            n.y.narun@gmail.com
           </a>
         </div>
         <div className="app__footer-card">
@@ -20,13 +22,35 @@ const Footer = () => {
             +91 95211-58199
           </a>
         </div>
+        <div className="app__social2">
+          <div>
+            <a href="https://www.linkedin.com/in/narunyadav/" target={"_blank"}>
+              <BsLinkedin />
+            </a>
+          </div>
+          <div>
+            <a href="https://twitter.com/NarunYadav/" target={"_blank"}>
+              <BsTwitter />
+            </a>
+          </div>
+          <div>
+            <a href="https://github.com/yadavnarun/" target={"_blank"}>
+              <BsGithub />
+            </a>
+          </div>
+          <div>
+            <a href="https://leetcode.com/narun/" target={"_blank"}>
+              <SiLeetcode />
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );
 };
 
 export default AppWrap(
-  MotionWrap(Footer, 'app__footer'),
-  'contact',
-  'app__whitebg'
+  MotionWrap(Footer, "app__footer"),
+  "contact",
+  "app__whitebg"
 );
