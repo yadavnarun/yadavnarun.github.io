@@ -22,6 +22,13 @@ const Work = () => {
       projectLink: 'https://github.com/Stonksbunker/optionchain-visualizer',
       tags: ['Python'],
     },
+    {
+      title: 'mgrep',
+      imgUrl: 'mgrep',
+      codeLink: 'https://github.com/yadavnarun/mgrep',
+      projectLink: 'https://github.com/yadavnarun/mgrep',
+      tags: ['GoLang'],
+    },
   ];
 
   const [filterWork, setFilterWork] = useState(works);
