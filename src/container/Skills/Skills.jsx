@@ -1,67 +1,116 @@
-import { motion } from 'framer-motion';
-import ReactTooltip from 'react-tooltip';
-
-import { AppWrap, MotionWrap } from '../../wrapper';
-import { images } from '../../constants';
-import './Skills.scss';
+import { motion } from "framer-motion";
+import { AppWrap, MotionWrap } from "../../wrapper";
+import { images } from "../../constants";
+import "./Skills.scss";
 
 const Skills = () => {
   const experiences = [
-    // {
-    //   year: '2020',
-    //   works: [{ name: 'lol', company: 'lollol', desc: 'dkajsdnaksjd' }],
-    // },
+    {
+      year: "2022",
+      works: [
+        {
+          name: "Backend Developer",
+          company: "Infinity Pillars",
+          desc: "",
+        },
+      ],
+    },
+    {
+      year: "2021",
+      works: [
+        {
+          name: "Learner",
+          company: "Self Growth",
+          desc: "",
+        },
+      ],
+    },
   ];
   const skills = [
     {
-      name: 'JavaScript',
-      bgColor: '#ffffb3',
-      icon: 'javascript',
+      name: "JavaScript",
+      bgColor: "#ffffb3",
+      icon: "javascript",
     },
     {
-      name: 'TypeScript',
-      bgColor: '#b3c6ff',
-      icon: 'typescript',
+      name: "TypeScript",
+      bgColor: "#b3c6ff",
+      icon: "typescript",
     },
     {
-      name: 'ReactJs',
-      bgColor: '#c2f0f0',
-      icon: 'react',
+      name: "GoLang",
+      bgColor: "#cceeff",
+      icon: "golang",
     },
     {
-      name: 'Sass',
-      bgColor: '#ffccf2',
-      icon: 'sass',
+      name: "Python",
+      bgColor: "#ffffe6",
+      icon: "python",
     },
     {
-      name: 'NodeJs',
-      bgColor: '#8cd9b3',
-      icon: 'node',
+      name: "NodeJs",
+      bgColor: "#8cd9b3",
+      icon: "node",
     },
     {
-      name: 'GoLang',
-      bgColor: '#cceeff',
-      icon: 'golang',
+      name: "NestJs",
+      bgColor: "#f79eb0",
+      icon: "nestjs",
     },
     {
-      name: 'Python',
-      bgColor: '#ffffe6',
-      icon: 'python',
+      name: "Redis",
+      bgColor: "#db6079",
+      icon: "redis",
     },
     {
-      name: 'Git',
-      bgColor: '#ffcccc',
-      icon: 'git',
+      name: "MySql",
+      bgColor: "#b3d9ff",
+      icon: "mysql",
     },
     {
-      name: 'Docker',
-      bgColor: '#b3d9ff',
-      icon: 'docker',
+      name: "MongoDb",
+      bgColor: "#7ceba3",
+      icon: "mongodb",
     },
     {
-      name: 'Figma',
-      bgColor: '#f0f5f5',
-      icon: 'figma',
+      name: "ReactJs",
+      bgColor: "#c2f0f0",
+      icon: "react",
+    },
+    {
+      name: "Sass",
+      bgColor: "#ffccf2",
+      icon: "sass",
+    },
+    {
+      name: "Git",
+      bgColor: "#ffcccc",
+      icon: "git",
+    },
+    {
+      name: "Docker",
+      bgColor: "#b3d9ff",
+      icon: "docker",
+    },
+    {
+      name: "AWS",
+      bgColor: "#fcb96d",
+      icon: "aws",
+    },
+    {
+      name: "Jenkins",
+      bgColor: "#c3bdfc",
+      icon: "jenkins",
+    },
+    {
+      name: "Prometheus",
+      bgColor: "#f5c084",
+      icon: "prometheus",
+    },
+    {
+      name: "Grafana",
+      bgColor: "#fcd7bd",
+      icon: "grafana",
     },
   ];
 
@@ -107,15 +156,8 @@ const Skills = () => {
                     >
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
+                      <p className="p-text">{work.desc}</p>
                     </motion.div>
-                    <ReactTooltip
-                      id={work.name}
-                      effect="solid"
-                      arrowColor="#fff"
-                      className="skills-tooltip"
-                    >
-                      {work.desc}
-                    </ReactTooltip>
                   </>
                 ))}
               </motion.div>
@@ -128,7 +170,7 @@ const Skills = () => {
 };
 
 export default AppWrap(
-  MotionWrap(Skills, 'app__skills'),
-  'skills',
-  'app__whitebg'
+  MotionWrap(Skills, "app__skills"),
+  "skills",
+  "app__whitebg"
 );

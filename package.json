@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "framer-motion": "^6.2.6",
+    "framer-motion": "^6.3.15",
     "node-sass": "^7.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
-    "react-scripts": "5.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-scripts": "5.0.1",
     "react-tooltip": "^4.2.21",
     "web-vitals": "^2.1.4"
   },

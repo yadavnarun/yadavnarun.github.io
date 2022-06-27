@@ -1,25 +1,24 @@
-import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs";
-import { SiLeetcode } from "react-icons/si";
+import { SiLeetcode, SiGmail, SiGooglehangouts } from "react-icons/si";
 import "./Footer.scss";
 
 const Footer = () => {
   return (
     <>
-      <h2 className="head-text">Take a coffee & chat with me</h2>
+      <h2 className="head-text">Connect with me</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
-          <img src={images.email} alt="email" />
+          <SiGmail />
           <a href="mailto:n.y.narun@gmail.com" className="p-text">
-            n.y.narun@gmail.com
+            <span>&nbsp;&nbsp;&nbsp;</span>n.y.narun@gmail.com
           </a>
         </div>
         <div className="app__footer-card">
-          <img src={images.mobile} alt="phone" />
+          <SiGooglehangouts />
           <a href="tel:+919521158199" className="p-text">
-            +91 95211-58199
+            <span>&nbsp;&nbsp;&nbsp;</span>+91 95211-58199
           </a>
         </div>
         <div className="app__social2">
