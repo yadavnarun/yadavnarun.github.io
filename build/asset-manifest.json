@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2b141f06.css",
+    "main.js": "/static/js/main.a932d5a6.js",
+    "static/media/about02.png": "/static/media/about02.fa7b3a72ed32b0e25bfb.png",
+    "static/media/about01.png": "/static/media/about01.080509de05322b7aafda.png",
+    "static/media/bgIMG.png": "/static/media/bgIMG.c39101e520e2997fc6d4.png",
+    "static/media/bgWhite.png": "/static/media/bgWhite.79658cadae50b3b16ee5.png",
+    "static/media/mgrep.png": "/static/media/mgrep.e4e997d9c72ec1e7dffe.png",
+    "static/media/about03.jpg": "/static/media/about03.2b9ba99f4a9077440ab6.jpg",
+    "static/media/jenkins.png": "/static/media/jenkins.e8a316862341297c8459.png",
+    "static/media/calput.png": "/static/media/calput.c1c7e0da96fb55d69ea0.png",
+    "static/media/authnode.gif": "/static/media/authnode.d0fd5fb906ae1f5cfa76.gif",
+    "static/media/redis.png": "/static/media/redis.4c5ab7d2a8bb220117fd.png",
+    "static/media/grafana.png": "/static/media/grafana.6a3d6eb34e98f86aaa78.png",
+    "static/media/sass.png": "/static/media/sass.36e863bfbcb25c109d00.png",
+    "static/media/aws.png": "/static/media/aws.de8c5d7d457d7aaa57c0.png",
+    "static/media/mongodb.png": "/static/media/mongodb.7a16fc61d457c9e340e2.png",
+    "static/media/node.png": "/static/media/node.8683d89cf78ffae3d1f7.png",
+    "static/media/golang.png": "/static/media/golang.52b0c7df8c78cd232e9a.png",
+    "static/media/mobile.png": "/static/media/mobile.145d9ce0157a56f8fcd8.png",
+    "static/media/email.png": "/static/media/email.37b9e890eea501421fbf.png",
+    "static/media/figma.png": "/static/media/figma.152e55329b6f1915967e.png",
+    "static/media/nestjs.png": "/static/media/nestjs.aa44bd1b53b341e6fcae.png",
+    "static/media/linux.png": "/static/media/linux.159113d8a92fa8a49747.png",
+    "static/media/mysql.png": "/static/media/mysql.a5fe1bf15ca1fa56137f.png",
+    "static/media/git.png": "/static/media/git.a54d3fa44e02f2f61e69.png",
+    "index.html": "/index.html",
+    "static/media/circle.svg": "/static/media/circle.134eeeb1e58895b892195fe8ed63bc9f.svg",
+    "main.2b141f06.css.map": "/static/css/main.2b141f06.css.map",
+    "main.a932d5a6.js.map": "/static/js/main.a932d5a6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b141f06.css",
+    "static/js/main.a932d5a6.js"
+  ]
+}
