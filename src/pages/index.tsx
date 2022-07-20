@@ -16,21 +16,6 @@ const Home: NextPage = () => {
         />
         <meta name="theme-color" content="#e4e4e4" />
       </Head>
-      <div>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-N7CQJ7QBGK"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-N7CQJ7QBGK');
-        `}
-        </Script>
-      </div>
       <Navbar />
       <Header />
       <About />
