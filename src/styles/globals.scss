@@ -17,7 +17,7 @@
   --text-md: 1.1rem;     // card titles, subheadings
   --text-lg: clamp(1.5rem, 3.5vw, 2rem);     // section intros
   --text-xl: clamp(1.8rem, 4vw, 2.5rem);     // section headings
-  --text-2xl: clamp(2.5rem, 7vw, 4.5rem);    // hero title
+  --text-2xl: clamp(3rem, 8vw, 5.5rem);      // hero title — dramatic
 
   // Tracking presets
   --tracking-tight: -0.03em;
@@ -30,7 +30,7 @@
   --bg: #050505;
   --bg-alt: #111111;
   --text: #ffffff;
-  --text-muted: #b8b8b8;
+  --text-muted: #999999;
   --accent: #00ff88;
   --accent-2: #ff3366;
   --accent-3: #ffcc00;
@@ -40,8 +40,8 @@
   --glow-color: rgba(0, 255, 136, 0.1);
 
   // Brutalist properties
-  --border-width: 3px;
-  --shadow-offset: 5px;
+  --border-width: 2px;
+  --shadow-offset: 4px;
   --radius: 0px;
   --transition-speed: 0.15s;
 
@@ -51,6 +51,7 @@
   --space-md: 1.5rem;
   --space-lg: 3rem;
   --space-xl: 5rem;
+  --space-2xl: 7rem;
 }
 
 // ============================================
@@ -162,11 +163,11 @@ a {
   background: var(--bg);
   border: var(--border-width) solid var(--border);
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
-  transition: all var(--transition-speed) ease;
+  transition: all 0.2s ease-out;
 
   &:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: calc(var(--shadow-offset) + 3px) calc(var(--shadow-offset) + 3px) 0 var(--shadow);
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0 var(--shadow);
   }
 }
 
@@ -428,10 +429,10 @@ a {
     font-family: var(--font-display);
     font-size: var(--text-2xl);
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1;
     margin-bottom: var(--space-md);
     color: var(--text);
-    letter-spacing: var(--tracking-tight);
+    letter-spacing: -0.04em;
     font-kerning: normal;
 
     .highlight {
@@ -452,14 +453,15 @@ a {
   &__subtitle {
     max-width: 550px;
     margin-bottom: var(--space-lg);
+    margin-top: var(--space-xs);
   }
 
   &__hook {
     font-family: var(--font-display);
-    font-size: var(--text-md);
-    font-weight: 600;
+    font-size: var(--text-lg);
+    font-weight: 700;
     color: var(--text);
-    line-height: 1.4;
+    line-height: 1.3;
     margin-bottom: var(--space-xs);
   }
 
@@ -468,7 +470,8 @@ a {
     font-size: var(--text-sm);
     color: var(--text-muted);
     line-height: 1.7;
-    letter-spacing: var(--tracking-wide);
+    letter-spacing: var(--tracking-normal);
+    opacity: 0.7;
   }
 
   &__cta {
@@ -477,10 +480,17 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
+    border-width: 3px;
+    box-shadow: 6px 6px 0 var(--shadow);
 
     svg {
       width: 1.2rem;
       height: 1.2rem;
+      transition: transform 0.2s ease-out;
+    }
+
+    &:hover svg {
+      transform: translateX(4px);
     }
   }
 
@@ -499,7 +509,7 @@ a {
 @keyframes hero-fade-up {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -520,7 +530,7 @@ a {
 @keyframes hero-cta-fade-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -554,7 +564,7 @@ a {
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -565,7 +575,7 @@ a {
 @keyframes fade-in-left {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-12px);
   }
   to {
     opacity: 1;
@@ -576,7 +586,7 @@ a {
 @keyframes fade-in-right {
   from {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(12px);
   }
   to {
     opacity: 1;
@@ -595,13 +605,28 @@ a {
   }
 }
 
+@keyframes stamp-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.1) rotate(-2deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.98) rotate(-0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-1deg);
+  }
+}
+
 // ============================================
 // PROBLEM SECTION
 // ============================================
 
 .problem {
   background: var(--bg-alt);
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-2xl) var(--space-md) var(--space-xl);
   position: relative;
   z-index: 1;
   border-top: var(--border-width) solid var(--border);
@@ -623,7 +648,7 @@ a {
   &__title {
     font-family: var(--font-display);
     font-size: var(--text-xl);
-    font-weight: 700;
+    font-weight: 800;
     color: var(--text);
     letter-spacing: var(--tracking-snug);
   }
@@ -631,7 +656,7 @@ a {
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.5rem;
     margin-bottom: var(--space-lg);
   }
 
@@ -651,7 +676,7 @@ a {
     opacity: 0;
 
     &:hover {
-      transform: translateX(5px);
+      transform: translateX(3px);
       border-color: var(--accent);
     }
 
@@ -697,14 +722,15 @@ a {
   &__conclusion {
     font-family: var(--font-display);
     font-size: var(--text-xl);
-    font-weight: 700;
+    font-weight: 800;
     color: #0a0a0a;
-    padding: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
     background: var(--accent);
-    border: var(--border-width) solid var(--border);
-    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
+    border: 3px solid var(--border);
+    box-shadow: 6px 6px 0 var(--shadow);
     display: inline-block;
     opacity: 0;
+    transform: rotate(-1deg);
   }
 
   &.in-view &__item {
@@ -712,11 +738,11 @@ a {
   }
 
   &.in-view &__conclusion {
-    animation: scale-in 0.4s ease-out 0.5s forwards;
+    animation: stamp-in 0.4s ease-out 0.5s forwards;
   }
 
   @media (max-width: 768px) {
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-xl) var(--space-sm) var(--space-lg);
   }
 }
 
@@ -725,7 +751,7 @@ a {
 // ============================================
 
 .credibility {
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-lg) var(--space-md);
   position: relative;
   z-index: 1;
 
@@ -753,7 +779,7 @@ a {
     justify-content: center;
 
     &:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     &--accent {
@@ -767,12 +793,12 @@ a {
 
   &__metric {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
     font-weight: 800;
     color: var(--text);
     line-height: 1;
     margin-bottom: var(--space-xs);
-    letter-spacing: var(--tracking-tight);
+    letter-spacing: -0.04em;
     font-variant-numeric: tabular-nums;
   }
 
@@ -814,7 +840,7 @@ a {
   }
 
   @media (max-width: 768px) {
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-md) var(--space-sm);
   }
 }
 
@@ -823,7 +849,7 @@ a {
 // ============================================
 
 .services {
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-2xl) var(--space-md) var(--space-xl);
   position: relative;
   z-index: 1;
   background: var(--bg-alt);
@@ -842,7 +868,7 @@ a {
   &__title {
     font-family: var(--font-display);
     font-size: var(--text-xl);
-    font-weight: 700;
+    font-weight: 800;
     color: var(--text);
     letter-spacing: var(--tracking-snug);
   }
@@ -862,7 +888,7 @@ a {
     padding: var(--space-md);
     display: flex;
     flex-direction: column;
-    border-left: 6px solid var(--accent);
+    border-left: 4px solid var(--accent);
     opacity: 0;
 
     &:nth-child(2) { border-left-color: var(--accent-4); }
@@ -910,7 +936,7 @@ a {
     font-family: var(--font-body);
     font-size: 0.75rem;
     color: var(--text-muted);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
     padding: var(--space-xs) var(--space-sm);
     background: var(--bg-alt);
     border-left: 3px solid var(--accent);
@@ -927,7 +953,7 @@ a {
   }
 
   @media (max-width: 768px) {
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-xl) var(--space-sm) var(--space-lg);
   }
 }
 
@@ -936,7 +962,7 @@ a {
 // ============================================
 
 .proof {
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-2xl) var(--space-md) var(--space-xl);
   position: relative;
   z-index: 1;
 
@@ -956,7 +982,7 @@ a {
   &__title {
     font-family: var(--font-display);
     font-size: var(--text-xl);
-    font-weight: 700;
+    font-weight: 800;
     color: var(--text);
     letter-spacing: var(--tracking-snug);
   }
@@ -999,7 +1025,7 @@ a {
   &__card {
     @include brutalist-card;
     padding: var(--space-md);
-    border-top: 6px solid var(--accent-2);
+    border-top: 4px solid var(--accent-2);
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -1106,7 +1132,7 @@ a {
   }
 
   @media (max-width: 768px) {
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-xl) var(--space-sm) var(--space-lg);
   }
 }
 
@@ -1115,7 +1141,7 @@ a {
 // ============================================
 
 .final-cta {
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-2xl) var(--space-md);
   position: relative;
   z-index: 1;
   text-align: center;
@@ -1147,11 +1173,11 @@ a {
 
   &__title {
     font-family: var(--font-display);
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
     color: #0a0a0a;
     margin-bottom: var(--space-md);
-    letter-spacing: var(--tracking-snug);
+    letter-spacing: -0.03em;
   }
 
   &__availability {
@@ -1181,12 +1207,22 @@ a {
     align-items: center;
     gap: 0.75rem;
     margin-bottom: var(--space-md);
+    border-width: 3px;
+    box-shadow: 6px 6px 0 var(--shadow);
+
+    svg {
+      transition: transform 0.2s ease-out;
+    }
+
+    &:hover svg {
+      transform: translateX(4px);
+    }
   }
 
   &__subtext {
     font-family: var(--font-body);
     font-size: var(--text-sm);
-    color: #0a0a0a;
+    color: rgba(10, 10, 10, 0.7);
     line-height: 1.6;
     margin-bottom: var(--space-md);
   }
@@ -1210,7 +1246,7 @@ a {
   }
 
   @media (max-width: 768px) {
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-xl) var(--space-sm);
   }
 }
 

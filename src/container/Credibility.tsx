@@ -4,7 +4,7 @@ import { useInView } from "../hooks/useInView";
 const metrics = [
   { target: 500, prefix: "$", suffix: "K+", label: "monthly debt recovery" },
   { target: 100, prefix: "", suffix: "K+", label: "monthly calls & chats" },
-  { target: 70, prefix: "", suffix: "%", label: "latency cut (800→250ms)" },
+  { target: 70, prefix: "", suffix: "%", label: "latency reduction" },
   { value: "arXiv", label: "2410.17950", accent: true },
 ];
 

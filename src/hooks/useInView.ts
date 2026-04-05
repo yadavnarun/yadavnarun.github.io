@@ -15,7 +15,7 @@ export function useInView(options?: IntersectionObserverInit) {
           observer.disconnect(); // Only trigger once
         }
       },
-      { threshold: 0.15, ...options }
+      { threshold: 0.05, rootMargin: "-60px 0px", ...options }
     );
 
     observer.observe(element);
