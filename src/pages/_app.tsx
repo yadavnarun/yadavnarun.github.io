@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import Lenis from "lenis";
+import posthog from "posthog-js";
+import { PostHogProvider } from "posthog-js/react";
 import * as gtag from "../lib/gtag";
 import { themes, ColorMode, applyTheme } from "../lib/themes";
 import WorkshopBackground from "../components/WorkshopBackground";
@@ -45,6 +47,17 @@ const App = ({ Component, pageProps }: AppProps) => {
   const [showSettings, setShowSettings] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isLocal, setIsLocal] = useState(false);
+
+  // PostHog analytics
+  useEffect(() => {
+    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN as string, {
+      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+      defaults: "2026-01-30",
+      loaded: (posthog) => {
+        if (process.env.NODE_ENV === "development") posthog.debug();
+      },
+    });
+  }, []);
 
   // Console easter egg
   useEffect(() => {
@@ -205,7 +218,9 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
       )}
 
-      <Component {...pageProps} />
+      <PostHogProvider client={posthog}>
+        <Component {...pageProps} />
+      </PostHogProvider>
 
       {/* Control Panel - only on localhost */}
       {mounted && isLocal && (
