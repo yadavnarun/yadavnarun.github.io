@@ -52,6 +52,7 @@
   --space-lg: 3rem;
   --space-xl: 5rem;
   --space-2xl: 7rem;
+
 }
 
 // ============================================
@@ -182,6 +183,10 @@ a {
   width: 100%;
   position: relative;
   z-index: 1;
+
+  @media (max-width: 480px) {
+    padding: 0 var(--space-xs);
+  }
 }
 
 // ============================================
@@ -198,6 +203,10 @@ a {
   background: var(--bg);
   border-bottom: var(--border-width) solid var(--border);
   transition: transform var(--transition-speed) ease;
+
+  @media (max-width: 480px) {
+    padding: var(--space-xs) var(--space-sm);
+  }
 
   &--visible {
     transform: translateY(0);
@@ -498,6 +507,10 @@ a {
     min-height: 100svh;
     padding: 7rem var(--space-sm) var(--space-lg);
   }
+
+  @media (max-width: 480px) {
+    padding: 5rem var(--space-xs) var(--space-md);
+  }
 }
 
 @keyframes blink {
@@ -621,6 +634,45 @@ a {
 }
 
 // ============================================
+// MOBILE ANIMATION OVERRIDES
+// ============================================
+// On mobile: horizontal slides → vertical fades, shorter distance,
+// toned-down stamp effect.
+
+@media (max-width: 768px) {
+  @keyframes fade-in-left {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fade-in-right {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes stamp-in {
+    0% { opacity: 0; transform: scale(1.05) rotate(-1deg); }
+    60% { opacity: 1; transform: scale(0.99) rotate(-0.3deg); }
+    100% { opacity: 1; transform: scale(1) rotate(-1deg); }
+  }
+}
+
+// ============================================
+// PER-ELEMENT SCROLL ANIMATION
+// ============================================
+// Each element gets its own IntersectionObserver via AnimateIn.
+// .animate-out = hidden, .animate-in = visible with animation.
+
+.animate-out {
+  opacity: 0;
+}
+
+// ============================================
 // PROBLEM SECTION
 // ============================================
 
@@ -638,11 +690,10 @@ a {
 
   &__header {
     margin-bottom: var(--space-lg);
-    opacity: 0;
-  }
 
-  &.in-view &__header {
-    animation: fade-up 0.5s ease-out forwards;
+    &.animate-in {
+      animation: fade-up 0.5s ease-out forwards;
+    }
   }
 
   &__title {
@@ -673,7 +724,6 @@ a {
     transition: all var(--transition-speed) ease;
     cursor: pointer;
     user-select: none;
-    opacity: 0;
 
     &:hover {
       transform: translateX(3px);
@@ -729,20 +779,23 @@ a {
     border: 3px solid var(--border);
     box-shadow: 6px 6px 0 var(--shadow);
     display: inline-block;
-    opacity: 0;
     transform: rotate(-1deg);
+
+    &.animate-in {
+      animation: stamp-in 0.4s ease-out forwards;
+    }
   }
 
-  &.in-view &__item {
+  &__item.animate-in {
     animation: fade-in-left 0.4s ease-out forwards;
-  }
-
-  &.in-view &__conclusion {
-    animation: stamp-in 0.4s ease-out 0.5s forwards;
   }
 
   @media (max-width: 768px) {
     padding: var(--space-xl) var(--space-sm) var(--space-lg);
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--space-lg) var(--space-xs) var(--space-md);
   }
 }
 
@@ -771,12 +824,15 @@ a {
   &__card {
     padding: var(--space-md) var(--space-sm);
     text-align: center;
-    opacity: 0;
     transition: transform 0.2s ease;
     border-bottom: 3px solid var(--border);
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    &.animate-in {
+      animation: fade-in-right 0.4s ease-out forwards;
+    }
 
     &:hover {
       transform: translateY(-2px);
@@ -835,12 +891,12 @@ a {
     }
   }
 
-  &.in-view &__card {
-    animation: fade-in-right 0.4s ease-out forwards;
-  }
-
   @media (max-width: 768px) {
     padding: var(--space-md) var(--space-sm);
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--space-sm) var(--space-xs);
   }
 }
 
@@ -858,11 +914,10 @@ a {
 
   &__header {
     margin-bottom: var(--space-lg);
-    opacity: 0;
-  }
 
-  &.in-view &__header {
-    animation: fade-up 0.5s ease-out forwards;
+    &.animate-in {
+      animation: fade-up 0.5s ease-out forwards;
+    }
   }
 
   &__title {
@@ -889,15 +944,18 @@ a {
     display: flex;
     flex-direction: column;
     border-left: 4px solid var(--accent);
-    opacity: 0;
+
+    &.animate-in {
+      animation: fade-up 0.4s ease-out forwards;
+    }
+
+    @media (max-width: 480px) {
+      padding: var(--space-sm);
+    }
 
     &:nth-child(2) { border-left-color: var(--accent-4); }
     &:nth-child(3) { border-left-color: var(--accent-2); }
     &:nth-child(4) { border-left-color: var(--accent-3); }
-  }
-
-  &.in-view &__card {
-    animation: fade-up 0.4s ease-out forwards;
   }
 
   &__card-header {
@@ -955,6 +1013,10 @@ a {
   @media (max-width: 768px) {
     padding: var(--space-xl) var(--space-sm) var(--space-lg);
   }
+
+  @media (max-width: 480px) {
+    padding: var(--space-lg) var(--space-xs) var(--space-md);
+  }
 }
 
 // ============================================
@@ -968,15 +1030,14 @@ a {
 
   &__header {
     margin-bottom: var(--space-lg);
-    opacity: 0;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: var(--space-sm);
-  }
 
-  &.in-view &__header {
-    animation: fade-up 0.5s ease-out forwards;
+    &.animate-in {
+      animation: fade-up 0.5s ease-out forwards;
+    }
   }
 
   &__title {
@@ -1028,15 +1089,18 @@ a {
     border-top: 4px solid var(--accent-2);
     display: flex;
     flex-direction: column;
-    opacity: 0;
+
+    &.animate-in {
+      animation: fade-up 0.5s ease-out forwards;
+    }
+
+    @media (max-width: 480px) {
+      padding: var(--space-sm);
+    }
 
     &:last-child {
       border-top-color: var(--accent-4);
     }
-  }
-
-  &.in-view &__card {
-    animation: fade-up 0.5s ease-out forwards;
   }
 
   &__card-company {
@@ -1134,6 +1198,10 @@ a {
   @media (max-width: 768px) {
     padding: var(--space-xl) var(--space-sm) var(--space-lg);
   }
+
+  @media (max-width: 480px) {
+    padding: var(--space-lg) var(--space-xs) var(--space-md);
+  }
 }
 
 // ============================================
@@ -1151,11 +1219,10 @@ a {
   &__container {
     max-width: 600px;
     margin: 0 auto;
-    opacity: 0;
-  }
 
-  &.in-view &__container {
-    animation: fade-up 0.6s ease-out forwards;
+    &.animate-in {
+      animation: fade-up 0.6s ease-out forwards;
+    }
   }
 
   &__label {
@@ -1247,6 +1314,10 @@ a {
 
   @media (max-width: 768px) {
     padding: var(--space-xl) var(--space-sm);
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--space-lg) var(--space-xs);
   }
 }
 

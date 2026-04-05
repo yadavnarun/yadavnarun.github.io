@@ -1,4 +1,4 @@
-import { useInView } from "../hooks/useInView";
+import AnimateIn from "../components/AnimateIn";
 
 const services = [
   {
@@ -40,25 +40,18 @@ const services = [
 ];
 
 const Services = () => {
-  const { ref, isInView } = useInView();
-
   return (
-    <section
-      className={`services ${isInView ? "in-view" : ""}`}
-      id="services"
-      ref={ref as React.RefObject<HTMLElement>}
-    >
+    <section className="services" id="services">
       <div className="container">
-        <div className="services__header">
+        <AnimateIn className="services__header">
           <h2 className="services__title">What I build</h2>
-        </div>
+        </AnimateIn>
 
         <div className="services__grid">
           {services.map((service, index) => (
-            <div
+            <AnimateIn
               key={index}
               className="services__card"
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="services__card-header">
                 <h3 className="services__card-title">{service.title}</h3>
@@ -74,7 +67,7 @@ const Services = () => {
               >
                 {service.cta}
               </a>
-            </div>
+            </AnimateIn>
           ))}
         </div>
       </div>

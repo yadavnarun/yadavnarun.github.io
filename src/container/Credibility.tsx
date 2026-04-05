@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useInView } from "../hooks/useInView";
+import AnimateIn from "../components/AnimateIn";
 
 const metrics = [
   { target: 500, prefix: "$", suffix: "K+", label: "monthly debt recovery" },
@@ -38,35 +39,28 @@ function useCounter(target: number, isInView: boolean, duration = 1200) {
   return count;
 }
 
-const CounterMetric = ({ metric, isInView, delay }: {
+const CounterMetric = ({ metric, isInView }: {
   metric: typeof metrics[0];
   isInView: boolean;
-  delay: string;
 }) => {
   const count = useCounter("target" in metric ? metric.target! : 0, isInView);
 
   if ("value" in metric && metric.value) {
     return (
-      <div
-        className={`credibility__card ${metric.accent ? "credibility__card--accent" : ""}`}
-        style={{ animationDelay: delay }}
-      >
+      <>
         <p className="credibility__metric">{metric.value}</p>
         <p className="credibility__label-text">{metric.label}</p>
-      </div>
+      </>
     );
   }
 
   return (
-    <div
-      className="credibility__card"
-      style={{ animationDelay: delay }}
-    >
+    <>
       <p className="credibility__metric">
         {"prefix" in metric ? metric.prefix : ""}{count}{"suffix" in metric ? metric.suffix : ""}
       </p>
       <p className="credibility__label-text">{metric.label}</p>
-    </div>
+    </>
   );
 };
 
@@ -75,19 +69,19 @@ const Credibility = () => {
 
   return (
     <section
-      className={`credibility ${isInView ? "in-view" : ""}`}
+      className="credibility"
       id="credibility"
       ref={ref as React.RefObject<HTMLElement>}
     >
       <div className="container">
         <div className="credibility__grid">
           {metrics.map((metric, index) => (
-            <CounterMetric
+            <AnimateIn
               key={index}
-              metric={metric}
-              isInView={isInView}
-              delay={`${index * 0.1}s`}
-            />
+              className={`credibility__card ${metric.accent ? "credibility__card--accent" : ""}`}
+            >
+              <CounterMetric metric={metric} isInView={isInView} />
+            </AnimateIn>
           ))}
         </div>
       </div>

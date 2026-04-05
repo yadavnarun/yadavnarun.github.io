@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useInView } from "../hooks/useInView";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
+import AnimateIn from "../components/AnimateIn";
 
 const caseStudies = [
   {
@@ -36,17 +36,12 @@ const caseStudies = [
 ];
 
 const Proof = () => {
-  const { ref, isInView } = useInView();
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section
-      className={`proof ${isInView ? "in-view" : ""}`}
-      id="proof"
-      ref={ref as React.RefObject<HTMLElement>}
-    >
+    <section className="proof" id="proof">
       <div className="container">
-        <div className="proof__header">
+        <AnimateIn className="proof__header">
           <h2 className="proof__title">Where I&apos;ve shipped</h2>
           <button
             className="proof__toggle"
@@ -58,14 +53,13 @@ const Proof = () => {
               <>Details <HiChevronDown /></>
             )}
           </button>
-        </div>
+        </AnimateIn>
 
         <div className="proof__grid">
           {caseStudies.map((study, index) => (
-            <div
+            <AnimateIn
               key={index}
               className={`proof__card ${expanded ? "proof__card--expanded" : ""}`}
-              style={{ animationDelay: `${index * 0.2}s` }}
             >
               <p className="proof__card-company">{study.company}</p>
               <h3 className="proof__card-role">{study.role}</h3>
@@ -86,7 +80,7 @@ const Proof = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </AnimateIn>
           ))}
         </div>
       </div>

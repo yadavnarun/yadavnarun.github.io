@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useInView } from "../hooks/useInView";
+import AnimateIn from "../components/AnimateIn";
 
 const problems = [
   "Your MVP needs to ship in 6 weeks. Your team is 8 weeks away.",
@@ -37,32 +38,33 @@ const Problem = () => {
 
   return (
     <section
-      className={`problem ${isInView ? "in-view" : ""}`}
+      className="problem"
       id="problem"
       ref={ref as React.RefObject<HTMLElement>}
     >
       <div className="container">
-        <div className="problem__header">
+        <AnimateIn className="problem__header">
           <h2 className="problem__title">You&apos;re here because:</h2>
-        </div>
+        </AnimateIn>
 
         <div className="problem__list">
           {problems.map((problem, index) => (
-            <div
+            <AnimateIn
               key={index}
               className={`problem__item ${
                 checked.has(index) ? "problem__item--checked" : ""
               }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => toggleCheck(index)}
             >
               <div className="problem__checkbox" />
               <span>{problem}</span>
-            </div>
+            </AnimateIn>
           ))}
         </div>
 
-        <p className="problem__conclusion">I fix these.</p>
+        <AnimateIn className="problem__conclusion" as="p">
+          I fix these.
+        </AnimateIn>
       </div>
     </section>
   );

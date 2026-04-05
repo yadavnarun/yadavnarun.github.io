@@ -114,10 +114,12 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   // Smooth scroll with Lenis
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: isMobile ? 0.8 : 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
+      touchMultiplier: isMobile ? 1.5 : 2,
     });
 
     // Expose globally for nav links

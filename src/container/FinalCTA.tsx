@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { HiArrowRight } from "react-icons/hi";
-import { useInView } from "../hooks/useInView";
+import AnimateIn from "../components/AnimateIn";
 
 const EMAIL = "mail@narun.in";
 
 const FinalCTA = () => {
-  const { ref, isInView } = useInView();
   const [meetUrl, setMeetUrl] = useState("https://l.narun.in/meet");
   const [copied, setCopied] = useState(false);
 
@@ -26,12 +25,8 @@ const FinalCTA = () => {
   };
 
   return (
-    <section
-      className={`final-cta ${isInView ? "in-view" : ""}`}
-      id="final-cta"
-      ref={ref as React.RefObject<HTMLElement>}
-    >
-      <div className="final-cta__container">
+    <section className="final-cta" id="final-cta">
+      <AnimateIn className="final-cta__container">
         <p className="final-cta__label">Limited availability</p>
         <h2 className="final-cta__title">
           Let&apos;s build something together
@@ -68,7 +63,7 @@ const FinalCTA = () => {
             Resume
           </a>
         </p>
-      </div>
+      </AnimateIn>
     </section>
   );
 };

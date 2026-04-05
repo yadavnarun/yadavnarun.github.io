@@ -8,14 +8,20 @@ export function useInView(options?: IntersectionObserverInit) {
     const element = ref.current;
     if (!element) return;
 
+    const isMobile = window.innerWidth <= 768;
+    const defaults: IntersectionObserverInit = {
+      threshold: isMobile ? 0.02 : 0.05,
+      rootMargin: isMobile ? "-20px 0px" : "-60px 0px",
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsInView(true);
-          observer.disconnect(); // Only trigger once
+          observer.disconnect();
         }
       },
-      { threshold: 0.05, rootMargin: "-60px 0px", ...options }
+      { ...defaults, ...options }
     );
 
     observer.observe(element);
