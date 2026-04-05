@@ -1,5 +1,4 @@
-import NavigationDots from "./NavigationDots";
-import SocialMedia from "./SocialMedia";
 import Navbar from "./Navbar";
+import TerminalText from "./TerminalText";
 
-export { NavigationDots, SocialMedia, Navbar };
+export { Navbar, TerminalText };
